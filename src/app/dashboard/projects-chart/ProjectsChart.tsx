@@ -5,19 +5,24 @@ import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { CHART_DATA } from '../data/projects-chart.data';
 import { ProjectsChartTooltip } from './ProjectsChartTooltip';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card/card';
 import {
   type ChartConfig,
   ChartContainer,
   ChartTooltip,
-} from '@/components/ui/chart';
+} from '@/components/ui/chart/chart';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '@/components/ui/select/select';
 
 const chartConfig = {
   projects: {

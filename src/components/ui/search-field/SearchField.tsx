@@ -1,7 +1,7 @@
 'use client';
 
 import { Search } from 'lucide-react';
-import { Input } from '../input';
+import { Input } from '../input/input';
 
 interface Props {
   placeholder?: string;
