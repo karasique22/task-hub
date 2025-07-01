@@ -4,18 +4,26 @@ import { calcTaskProgress } from '@/utils/calc-task-progress'
 import { daysLeft } from '@/utils/days-left'
 import { ImageIcon, Link, MessageSquareText } from 'lucide-react'
 import Image from 'next/image'
+import { plural } from 'ru-plurals'
 
 interface Props {
 	task: ITask
 }
 
+const getVerb = plural('Остался', 'Осталось', 'Осталось')
+
 export default function TaskCard({ task }: Props) {
 	const progress = calcTaskProgress(task)
 
+	const today = new Date()
+	const days = Math.ceil(
+		(task.endDate.getTime() - today.getTime()) / (1000 * 3600 * 24)
+	)
+
 	return (
-		<div className='flex h-full flex-col justify-between gap-4 rounded-2xl bg-white p-5'>
+		<div className='bg-card flex h-full flex-col justify-between gap-6 rounded-2xl p-5'>
 			<div className='flex items-start'>
-				<div className='mr-1.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-violet-100'>
+				<div className='mr-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-violet-100 dark:bg-neutral-700'>
 					<task.icon
 						aria-label={task.title}
 						width={25}
@@ -24,12 +32,12 @@ export default function TaskCard({ task }: Props) {
 					/>
 				</div>
 
-				<div className='mr-1 flex min-h-[52px] flex-1 flex-col'>
+				<div className='mr-1 flex min-h-[52px] flex-1 flex-col gap-1'>
 					<div className='line-clamp-2 text-base/tight font-medium'>
 						{task.title}
 					</div>
-					<div className='text-xs text-neutral-500'>
-						Осталось: {daysLeft(task.endDate)}
+					<div className='text-muted-foreground text-xs'>
+						{getVerb(days)}: {daysLeft(task.endDate)}
 					</div>
 				</div>
 
@@ -44,7 +52,7 @@ export default function TaskCard({ task }: Props) {
 								width={35}
 								height={35}
 								alt={user.name}
-								className='h-[35px] w-[35px] rounded-full border-2 border-neutral-200'
+								className='border-muted h-[35px] w-[35px] rounded-full border-2'
 							/>
 						</div>
 					))}

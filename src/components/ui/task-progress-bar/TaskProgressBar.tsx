@@ -10,10 +10,10 @@ export default function TaskProgressBar({ progress }: Props) {
 	const barColor = getProgressBarColor(progress)
 
 	return (
-		<div className='relative h-12 w-full overflow-hidden rounded-full bg-neutral-200/50'>
+		<div className='relative h-14 w-full overflow-hidden rounded-full bg-neutral-200/50'>
 			<div
 				className={cn(
-					'flex h-full items-center justify-center text-xs font-medium text-white transition-all duration-300',
+					'flex h-full items-center justify-center rounded-full text-xs font-medium text-white transition-all duration-300',
 					barColor
 				)}
 				style={{ width: `${width}%` }}

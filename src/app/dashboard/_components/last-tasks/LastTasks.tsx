@@ -1,4 +1,4 @@
-import { TASKS } from '../data/last-tasks.data'
+import { TASKS } from '../../../../data/last-tasks.data'
 import TaskCard from './TaskCard'
 
 export default function LastTasks() {

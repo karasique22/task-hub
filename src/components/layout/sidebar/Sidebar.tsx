@@ -1,31 +1,35 @@
-'use client';
+'use client'
 
-import SidebarHeading from './SidebarHeading';
-import SidebarMenu from './SidebarMenu';
-import SidebarProjects from './SidebarProjects';
-import SidebarProfile from './SidebarProfile';
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
+
+import SidebarHeading from './SidebarHeading'
+import SidebarMenu from './SidebarMenu'
+import SidebarProfile from './SidebarProfile'
+import SidebarProjects from './SidebarProjects'
 
 const DynamicThemeToggle = dynamic(
-  () => import('./ThemeToggle').then((mod) => mod.default),
-  {
-    ssr: false,
-  }
-);
+	() => import('./ThemeToggle').then(mod => mod.default),
+	{
+		ssr: false
+	}
+)
 
 export const Sidebar = () => {
-  return (
-    <aside className='p-5 bg-white dark:bg-neutral-800 space-y-6'>
-      <SidebarHeading title='Аккаунт' />
-      <SidebarProfile name='Мистер Бист' email='ZV9Vt@example.com' />
+	return (
+		<aside className='bg-sidebar text-sidebar-foreground space-y-6 p-5'>
+			<SidebarHeading title='Аккаунт' />
+			<SidebarProfile
+				name='Мистер Бист'
+				email='ZV9Vt@example.com'
+			/>
 
-      <SidebarHeading title='Главное меню' />
-      <SidebarMenu />
+			<SidebarHeading title='Главное меню' />
+			<SidebarMenu />
 
-      <SidebarHeading title='Проекты' />
-      <SidebarProjects />
+			<SidebarHeading title='Проекты' />
+			<SidebarProjects />
 
-      <DynamicThemeToggle />
-    </aside>
-  );
-};
+			<DynamicThemeToggle />
+		</aside>
+	)
+}

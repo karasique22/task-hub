@@ -27,9 +27,9 @@ export const TASKS: ITask[] = [
 		endDate: new Date('2025-08-02'),
 		users: [USERS[3], USERS[4], USERS[5]],
 		subTasks: [{ id: '1', title: 'Создание интерфейса', isCompleted: true }],
-		comments: ['', '', ''],
-		attachments: ['', '', '', '', '', ''],
-		links: ['', '']
+		comments: ['', '', '', '', ''],
+		attachments: ['', '', ''],
+		links: ['', '', '', '']
 	},
 	{
 		id: '3',
@@ -44,8 +44,8 @@ export const TASKS: ITask[] = [
 			{ id: '4', title: 'Документация', isCompleted: true },
 			{ id: '5', title: 'Тестирование', isCompleted: false }
 		],
-		comments: ['', '', ''],
-		attachments: ['', '', '', '', '', ''],
-		links: ['', '']
+		comments: ['', '', '', ''],
+		attachments: ['', '', '', '', '', '', ''],
+		links: ['', '', '', '', '']
 	}
 ]

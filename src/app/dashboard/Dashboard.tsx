@@ -3,9 +3,9 @@
 import Heading from '@/components/ui/heading/Heading'
 import SearchField from '@/components/ui/search-field/SearchField'
 
-import LastTasks from './last-tasks/LastTasks'
-import ProjectsChart from './projects-chart/ProjectsChart'
-import ProjectsStats from './projects-stats/ProjectsStats'
+import LastTasks from './_components/last-tasks/LastTasks'
+import ProjectsChart from './_components/projects-chart/ProjectsChart'
+import ProjectsStats from './_components/projects-stats/ProjectsStats'
 
 export default function Dashboard() {
 	return (
@@ -29,7 +29,7 @@ export default function Dashboard() {
 				<LastTasks />
 			</div>
 
-			<div className='flex h-screen items-center justify-center bg-violet-300 p-5'>
+			<div className='bg-background flex h-screen items-center justify-center p-5'>
 				chat
 			</div>
 		</div>

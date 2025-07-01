@@ -1,9 +1,11 @@
 interface Props {
-  title: string;
+	title: string
 }
 
 export default function Page({ title }: Props) {
-  return (
-    <div className='font-medium mb-3 text-neutral-400 opacity-90'>{title}</div>
-  );
+	return (
+		<div className='mb-3 font-medium text-neutral-300 dark:text-neutral-600'>
+			{title}
+		</div>
+	)
 }
