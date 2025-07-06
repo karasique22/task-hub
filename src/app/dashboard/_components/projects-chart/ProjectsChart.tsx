@@ -113,7 +113,7 @@ export default function ProjectsChart() {
 								<stop
 									offset='5%'
 									stopColor='var(--color-primary)'
-									stopOpacity={0.7}
+									stopOpacity={0.5}
 								/>
 								<stop
 									offset='95%'
@@ -147,7 +147,7 @@ export default function ProjectsChart() {
 						<ChartTooltip
 							content={<ProjectsChartTooltip />}
 							cursor={{
-								stroke: '#735dee',
+								stroke: 'var(--color-primary)',
 								strokeWidth: 2,
 								strokeDasharray: '5 8'
 							}}
@@ -157,9 +157,13 @@ export default function ProjectsChart() {
 							dataKey='value'
 							type='bump'
 							fill='url(#fillProjects)'
-							stroke='#735dee'
+							stroke='var(--color-primary)'
 							stackId='a'
-							activeDot={{ r: 6, fill: 'white', stroke: '#735dee' }}
+							activeDot={{
+								r: 6,
+								fill: 'white',
+								stroke: 'var(--color-primary)'
+							}}
 						/>
 					</AreaChart>
 				</ChartContainer>

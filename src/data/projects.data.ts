@@ -1,6 +1,6 @@
 import type { IProject } from '@/types/project.types'
 
-import { TASKS } from './last-tasks.data'
+import { TASKS } from './tasks.data'
 
 export const PROJECTS: IProject[] = [
 	{

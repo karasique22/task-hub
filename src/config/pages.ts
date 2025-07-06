@@ -8,7 +8,10 @@ export const Pages = {
 	TEAM: `${BASE}/team`,
 	SCHEDULE: `${BASE}/schedule`,
 	REPORT: `${BASE}/report`,
-	SETTINGS: `${BASE}/settings`
+	SETTINGS: `${BASE}/settings`,
+
+	TASK: `${BASE}/task`,
+	TASKS: `${BASE}/task/{id}/edit`
 } as const
 
 export type PagePath = (typeof Pages)[keyof typeof Pages]

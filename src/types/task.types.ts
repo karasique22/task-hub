@@ -9,7 +9,9 @@ export interface ISubTask {
 }
 
 export interface ITask extends Omit<ISubTask, 'isCompleted'> {
+	projectId: string
 	icon: LucideIcon
+	createdAt: Date
 	endDate: Date
 	users: IProfile[]
 	subTasks: ISubTask[]

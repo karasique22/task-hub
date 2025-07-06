@@ -25,12 +25,18 @@ export default function ProjectsStatsCard({ projectStat }: Props) {
 				<span className='text-sm font-medium'>{projectStat.label}</span>
 			</div>
 
-			<div className='shrink-0'>
+			<div
+				className='relative flex h-16 w-16 shrink-0 items-end justify-center overflow-visible select-none'
+				draggable={false}
+			>
+				<div className='absolute bottom-0 left-1/2 z-0 h-2 w-8 -translate-x-1/2 rounded-full bg-black/60 blur-sm' />
+
 				<Image
 					src={projectStat.icon}
 					alt={projectStat.label}
-					width={85}
-					height={85}
+					width={60}
+					height={60}
+					className='relative z-10 -translate-y-1 object-contain'
 				/>
 			</div>
 		</div>

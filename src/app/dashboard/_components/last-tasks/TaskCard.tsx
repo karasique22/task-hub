@@ -2,9 +2,11 @@ import TaskProgressBar from '@/components/ui/task-progress-bar/TaskProgressBar'
 import type { ITask } from '@/types/task.types'
 import { calcTaskProgress } from '@/utils/calc-task-progress'
 import { daysLeft } from '@/utils/days-left'
-import { ImageIcon, Link, MessageSquareText } from 'lucide-react'
+import { ImageIcon, Link, MessageSquareText, Pencil, Plus } from 'lucide-react'
 import Image from 'next/image'
 import { plural } from 'ru-plurals'
+
+import TaskButton from './TaskButton'
 
 interface Props {
 	task: ITask
@@ -61,18 +63,32 @@ export default function TaskCard({ task }: Props) {
 
 			<TaskProgressBar progress={progress} />
 
-			<div className='flex items-center gap-4'>
-				<div className='flex items-center gap-1'>
-					<MessageSquareText className='h-4 w-4 text-neutral-400' />
-					<span className='text-sm'>{task.comments.length}</span>
+			<div className='flex items-center justify-between'>
+				<div className='flex items-center gap-4'>
+					<div className='flex items-center gap-1'>
+						<MessageSquareText className='size-4 text-neutral-400' />
+						<span className='text-sm'>{task.comments.length}</span>
+					</div>
+					<div className='flex items-center gap-1'>
+						<ImageIcon className='size-4 text-neutral-400' />
+						<span className='text-sm'>{task.attachments.length}</span>
+					</div>
+					<div className='flex items-center gap-1'>
+						<Link className='size-4 text-neutral-400' />
+						<span className='text-sm'>{task.links.length}</span>
+					</div>
 				</div>
-				<div className='flex items-center gap-1'>
-					<ImageIcon className='h-4 w-4 text-neutral-400' />
-					<span className='text-sm'>{task.attachments.length}</span>
-				</div>
-				<div className='flex items-center gap-1'>
-					<Link className='h-4 w-4 text-neutral-400' />
-					<span className='text-sm'>{task.links.length}</span>
+
+				<div className='flex items-center gap-2'>
+					<TaskButton
+						variant='primary'
+						buttonImage={<Plus className='size-4 stroke-3' />}
+					/>
+					<TaskButton
+						variant='secondary'
+						buttonImage={<Pencil className='size-4 stroke-2' />}
+						link={`/tasks/${task.id}/edit`}
+					/>
 				</div>
 			</div>
 		</div>
