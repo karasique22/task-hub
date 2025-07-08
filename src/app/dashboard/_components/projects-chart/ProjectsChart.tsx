@@ -1,23 +1,18 @@
 'use client'
 
-import {
-	Card,
-	CardContent,
-	CardHeader,
-	CardTitle
-} from '@/components/ui/card/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
 	type ChartConfig,
 	ChartContainer,
 	ChartTooltip
-} from '@/components/ui/chart/chart'
+} from '@/components/ui/chart'
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue
-} from '@/components/ui/select/select'
+} from '@/components/ui/select'
 import { CHART_DATA } from '@/data/projects-chart.data'
 import * as React from 'react'
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from 'recharts'

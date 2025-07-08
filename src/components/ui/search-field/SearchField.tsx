@@ -2,7 +2,7 @@
 
 import { Search } from 'lucide-react'
 
-import { Input } from '../input/input'
+import { Input } from '../input'
 
 interface Props {
 	placeholder?: string

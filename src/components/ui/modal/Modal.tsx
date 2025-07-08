@@ -1,6 +1,6 @@
 'use client'
 
-import { Dialog, DialogContent } from '@/components/ui/dialog/dialog'
+import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { DialogTitle } from '@radix-ui/react-dialog'
 import { useRouter } from 'next/navigation'
 

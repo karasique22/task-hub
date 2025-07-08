@@ -4,7 +4,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue
-} from '@/components/ui/select/select'
+} from '@/components/ui/select'
 import { ListFilter } from 'lucide-react'
 
 type FilterType = 'all' | 'done' | 'in-work' | 'not-started'
