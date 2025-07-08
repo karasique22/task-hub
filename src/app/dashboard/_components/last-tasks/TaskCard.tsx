@@ -1,4 +1,5 @@
 import TaskProgressBar from '@/components/ui/task-progress-bar/TaskProgressBar'
+import { Pages } from '@/config/pages'
 import type { ITask } from '@/types/task.types'
 import { calcTaskProgress } from '@/utils/calc-task-progress'
 import { daysLeft } from '@/utils/days-left'
@@ -87,7 +88,7 @@ export default function TaskCard({ task }: Props) {
 					<TaskButton
 						variant='secondary'
 						buttonImage={<Pencil className='size-4 stroke-2' />}
-						link={`/tasks/${task.id}/edit`}
+						link={Pages.TASK_EDIT.replace('{id}', task.id)}
 					/>
 				</div>
 			</div>

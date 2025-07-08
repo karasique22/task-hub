@@ -1,4 +1,5 @@
-import { STATS_DATA } from '../../../../data/projects-stats.data'
+import { STATS_DATA } from '@/data/projects-stats.data'
+
 import ProjectStatsCard from './ProjectStatsCard'
 
 export default function ProjectsStats() {

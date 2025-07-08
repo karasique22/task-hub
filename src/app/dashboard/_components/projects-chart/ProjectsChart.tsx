@@ -18,10 +18,10 @@ import {
 	SelectTrigger,
 	SelectValue
 } from '@/components/ui/select/select'
+import { CHART_DATA } from '@/data/projects-chart.data'
 import * as React from 'react'
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 
-import { CHART_DATA } from '../../../../data/projects-chart.data'
 import { ProjectsChartTooltip } from './ProjectsChartTooltip'
 
 const chartConfig = {
