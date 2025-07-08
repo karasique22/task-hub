@@ -1,14 +1,13 @@
+import TaskEditShell from '@/components/task-edit/TaskEditShell'
 import Modal from '@/components/ui/modal/Modal'
 
-import TaskEditForm from './TaskEditForm'
-
-export default async function TaskEditPage(props: {
-	params: Promise<{ id: string }>
-}) {
-	const params = await props.params
+export default function Page({ params }: { params: { id: string } }) {
 	return (
 		<Modal dialogTitle='Редактирование задачи'>
-			<TaskEditForm taskId={params.id} />
+			<TaskEditShell
+				taskId={params.id}
+				hideBack
+			/>
 		</Modal>
 	)
 }

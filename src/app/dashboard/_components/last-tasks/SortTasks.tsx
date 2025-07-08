@@ -5,7 +5,7 @@ import {
 	SelectTrigger,
 	SelectValue
 } from '@/components/ui/select'
-import { ArrowDownAZ, ArrowDownZA, ArrowUpAZ, ArrowUpZA } from 'lucide-react'
+import { ArrowDownAZ, ArrowUpAZ } from 'lucide-react'
 
 type SortType = 'createdAt' | 'endDate' | 'title'
 type Direction = 'asc' | 'desc'
