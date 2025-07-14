@@ -84,6 +84,7 @@ export default function TaskCard({ task }: Props) {
 					<TaskButton
 						variant='primary'
 						buttonImage={<Plus className='size-4 stroke-3' />}
+						link={Pages.ADD_SUBTASK.replace('{id}', task.id)}
 					/>
 					<TaskButton
 						variant='secondary'

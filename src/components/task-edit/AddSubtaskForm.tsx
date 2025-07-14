@@ -11,42 +11,42 @@ import {
 	FormMessage
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import useTask from '@/hooks/useTask'
-import { type TaskEditInputs, TaskEditSchema } from '@/schemas/task-edit.schema'
+import {
+	type SubtaskCreateInputs,
+	SubtaskCreateSchema
+} from '@/schemas/add-subtask-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-export default function TaskEditForm({ taskId }: { taskId: string }) {
-	const task = useTask(taskId)
-
-	const form = useForm<TaskEditInputs>({
-		resolver: zodResolver(TaskEditSchema),
-		defaultValues: task && {
-			title: task.title,
-			endDate: task.endDate,
-			icon: task.icon
-		}
+export default function AddSubtaskForm({ taskId }: { taskId: string }) {
+	const form = useForm<SubtaskCreateInputs>({
+		resolver: zodResolver(SubtaskCreateSchema)
 	})
 
-	async function onSubmit(data: TaskEditInputs) {
-		console.log(data)
+	async function onSubmit(data: SubtaskCreateInputs) {
+		await fetch(`/api/tasks/${taskId}/subtasks`, {
+			method: 'POST',
+			body: JSON.stringify(data)
+		})
+		// TODO: можно закрыть модалку или обновить родительский список
 	}
 
 	return (
 		<Form {...form}>
 			<form
 				onSubmit={form.handleSubmit(onSubmit)}
-				className='mt-3 flex flex-col gap-4'
+				className='w-72 space-y-4'
 			>
 				<FormField
 					control={form.control}
 					name='title'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Название</FormLabel>
+							<FormLabel>Название подзадачи</FormLabel>
 							<FormControl>
 								<Input
-									placeholder='Введите название'
+									autoFocus
+									placeholder='Описание…'
 									{...field}
 								/>
 							</FormControl>
@@ -57,10 +57,10 @@ export default function TaskEditForm({ taskId }: { taskId: string }) {
 
 				<FormField
 					control={form.control}
-					name='endDate'
+					name='deadline'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Срок</FormLabel>
+							<FormLabel>Срок (необязательно)</FormLabel>
 							<FormControl>
 								<Calendar
 									mode='single'
@@ -73,23 +73,11 @@ export default function TaskEditForm({ taskId }: { taskId: string }) {
 					)}
 				/>
 
-				<FormField
-					control={form.control}
-					name='icon'
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Иконка</FormLabel>
-							<FormControl>{/* <IconSelect {...field} /> */}</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-
 				<Button
 					type='submit'
 					disabled={form.formState.isSubmitting}
 				>
-					Сохранить
+					Добавить
 				</Button>
 			</form>
 		</Form>

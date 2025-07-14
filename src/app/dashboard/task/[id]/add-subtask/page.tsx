@@ -1,6 +1,6 @@
-import TaskEditShell from '@/components/task-edit/TaskEditShell'
+import AddSubtaskShell from '@/components/task-edit/AddSubtaskShell'
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
 	const params = await props.params
-	return <TaskEditShell taskId={params.id} />
+	return <AddSubtaskShell taskId={params.id} />
 }

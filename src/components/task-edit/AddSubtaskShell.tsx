@@ -2,14 +2,14 @@ import { Pages } from '@/config/pages'
 import { ArrowLeftCircle } from 'lucide-react'
 import Link from 'next/link'
 
-import TaskEditForm from './TaskEditForm'
+import AddSubtaskForm from './AddSubtaskForm'
 
 interface Props {
 	taskId: string
 	hideBack?: boolean
 }
 
-export default function TaskEditShell({ taskId, hideBack }: Props) {
+export default function AddSubtaskShell({ taskId, hideBack }: Props) {
 	return (
 		<>
 			{!hideBack && (
@@ -22,7 +22,7 @@ export default function TaskEditShell({ taskId, hideBack }: Props) {
 				</Link>
 			)}
 
-			<TaskEditForm taskId={taskId} />
+			<AddSubtaskForm taskId={taskId} />
 		</>
 	)
 }

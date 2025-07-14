@@ -10,7 +10,8 @@ export const Pages = {
 	REPORT: `${BASE}/report`,
 	SETTINGS: `${BASE}/settings`,
 
-	TASK_EDIT: `${BASE}/task/{id}/edit`
+	TASK_EDIT: `${BASE}/task/{id}/edit`,
+	ADD_SUBTASK: `${BASE}/task/{id}/add-subtask`
 } as const
 
 export type PagePath = (typeof Pages)[keyof typeof Pages]
